@@ -10,7 +10,6 @@ import (
     "bytes"
 
     "github.com/PuerkitoBio/goquery"
-    "io/ioutil"
 )
 
 const CityToFind = "ванкувер"
@@ -81,8 +80,4 @@ func sendNotification(message string) {
         log.Panic(err)
     }
     defer resp.Body.Close()
-
-    fmt.Println("response Status:", resp.Status)
-    body, _ := ioutil.ReadAll(resp.Body)
-    fmt.Println("response Body:", string(body))
 }
